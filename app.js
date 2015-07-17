@@ -4,7 +4,12 @@
 var http = require('http'),
     director = require('director'),
 	plates = require('plates'),
-	fs = require('fs');
+	fs = require('fs'),
+	request = require('request'),
+	response = require('response'),
+	express = require('express');
+
+var app = express();	
 
 var homepage = '',
 output = '';	
@@ -42,8 +47,8 @@ var data = { "text_na_front": "Tutaj leca newsy oraz do RSS" };
 
 output = plates.bind(html, data);
 
-  this.res.writeHead(200, { 'Content-Type': 'text/html' })
-  this.res.end(output);
+//  this.res.writeHead(200, { 'Content-Type': 'text/html' })
+  return output;
 }
 
 var routes = {
@@ -84,16 +89,26 @@ var router = new director.http.Router(routes);
 // setup a server and when there is a request, dispatch the
 // route that was requested in the request object.
 //
-
-var server = http.createServer(function (req, res) {
-  router.dispatch(req, res, function (err) {
+/*
+var server = http.createServer(function (request, response) {
+  router.dispatch(request, response, function (err) {
     if (err) {
-      res.writeHead(404);
-	
-      res.end('dupa 404' + err);
+      response.writeHead(404);
+      response.end('dupa 404' + err);
     }
   });
 });
+
+*/
+
+
+var server = app.listen(3000, function() { 
+var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+})
+
 
 //
 // You can also do ad-hoc routing, similar to `journey` or `express`.
@@ -104,13 +119,21 @@ function helloWorld() {
   this.res.end('Carl Sagan');
 }
 
-router.get('/dupa', showCover );
-router.get('/news/1', showBiography);
+//router.get('/dupa', showCover );
+//router.get('/news/1', showBiography);
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+app.get('/news/1', function(req, res) {
+res.send(showBiography());
+});
+app.use(express.static('site'));
 //router.get('/hola/', helloWorld);
 
 //
 // set the server to listen on port `8080`.
 //
-server.listen(3000);
+
+//server.listen(3000);
 
 
