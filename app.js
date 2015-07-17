@@ -56,7 +56,7 @@ var routes = {
   }
 };
 
-fs.readFile('html/index.html','utf8', function(err, data) {
+fs.readFile('site/index.html','utf8', function(err, data) {
  if (err) {
     return console.log(err);
   } else {
