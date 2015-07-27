@@ -8,13 +8,17 @@ team = {
     'Marcin Bauer':'Lubie placki'
 }
 
+navigation = {
+    'Zaloga': 'zaloga'
+}
+
 @app.route("/")
 def main_page():
-    return render_template('main.html')
+    return render_template('main.html', navigation=navigation)
 
 @app.route("/zaloga")
 def team_page():
-    return render_template('zaloga.html', team=team)
+    return render_template('zaloga.html', team=team, navigation=navigation)
 
 if __name__ == "__main__":
     app.run(debug=True)
