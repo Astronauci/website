@@ -8,38 +8,13 @@
         <br />
         <br />
         <div class="row">
-          <div class="col-md-4 astro-opis">
-            <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">Daniel Kosiński</h4>
-            <p>Lubię placki</p>
-          </div>
-          <div class="col-md-4 astro-opis">
-            <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">Krzysztof Wiśniewski</h4>
-            <p>Lubię placki</p>
-          </div>
-          <div class="col-md-4 astro-opis">
-            <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">Marcin Bauer</h4>
-            <p>Lubię placki</p>
-          </div>
-        </div>
-        <div class="row">
+          {% for name, desc in team.items() %}
           <div class="col-md-4">
             <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">This could be you!</h4>
-            <p>Lubię placki</p>
+            <h4 class="astronauta">{{ name }}</h4>
+            <p>{{ desc }}</p>
           </div>
-          <div class="col-md-4">
-            <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">This could be you!</h4>
-            <p>Lubię placki</p>
-          </div>
-          <div class="col-md-4">
-            <img class="pull-left astro-foto responsive" src="http://placehold.it/100x100" width="100" height="auto">
-            <h4 class="astronauta">This could be you!</h4>
-            <p>Lubię placki</p>
-          </div>
+          {% endfor %}
         </div>
       </div><!-- /.container -->
 {% endblock %}
