@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 team = {
-    'Daniel Kosinski':'Lubie placki',
+    u'Daniel Kosiński':'Lubie placki',
     'Krzysiek Wisniewski':'Lubie placki',
     'Marcin Bauer':'Lubie placki'
 }
