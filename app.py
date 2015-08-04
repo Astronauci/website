@@ -22,4 +22,4 @@ def team_page():
     return render_template('zaloga.html', team=team, navigation=navigation)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
