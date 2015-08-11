@@ -12,3 +12,8 @@
 .galeria {
     margin: 20px 20px 20px 20px;
 }
+
+#map-canvas {
+    width: 800px;
+    height: 400px;
+}
