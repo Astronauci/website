@@ -1,13 +1,13 @@
 body {
-	background: #ffffff url("../assets/pattern-stars.png");
+	background: #ffffff url("../static/pattern-stars.png");
 }
 
 .parallax-1 {
-	background: url("../assets/pattern-planets.png");
+	background: url("../static/pattern-planets.png");
 }
 
 .parallax-2 {
-        background: url("../assets/pattern-800-800.png");
+        background: url("../static/pattern-800-800.png");
 }
 
 .astronauta {
