@@ -5,9 +5,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 team = {
-    'Daniel Kosiński':'Lubię placki',
-    'Krzysiek Wiśniewski':'Lubię placki',
-    'Marcin Bauer':'Lubię placki'
+    'Daniel Kosiński':'Lubie placki',
+    'Krzysiek Wisniewski':'Lubie placki',
+    'Marcin Bauer':'Lubie placki'
 }
 
 navigation = {
