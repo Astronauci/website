@@ -5,13 +5,13 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 team = {
-    'Daniel Kosiński':'Lubie placki',
-    'Krzysiek Wisniewski':'Lubie placki',
-    'Marcin Bauer':'Lubie placki'
+    'Daniel Kosiński':'Lubię placki',
+    'Krzysiek Wisniewski':'Lubię placki',
+    'Marcin Bauer':'Lubię placki'
 }
 
 navigation = {
-    'Zaloga': 'zaloga',
+    'Załoga': 'zaloga',
     'Galeria': 'galeria',
     'O nas': 'onas'
 }
