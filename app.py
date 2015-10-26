@@ -31,5 +31,13 @@ def about_page():
 def gallery_page():
     return render_template('galeria.html', navigation=navigation)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', navigation=navigation), 404
+
+@app.errorhandler(505)
+def page_not_found(e):
+    return render_template('505.html', navigation=navigation), 500
+
 if __name__ == "__main__":
     app.run()
