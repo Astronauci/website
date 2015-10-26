@@ -1,17 +1,16 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 team = {
-    'Daniel Kosiński':'Lubię placki',
-    'Krzysiek Wisniewski':'Lubię placki',
-    'Marcin Bauer':'Lubię placki'
+    u'Daniel Kosiński':u'Lubię placki',
+    u'Krzysiek Wisniewski':u'Lubię placki',
+    u'Marcin Bauer':u'Lubię placki'
 }
 
 navigation = {
-    'Załoga': 'zaloga',
+    u'Załoga': 'zaloga',
     'Galeria': 'galeria',
     'O nas': 'onas'
 }
